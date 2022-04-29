@@ -1,0 +1,30 @@
+.keyboard-container {
+	padding: 5px;
+	border: 1px solid #000;
+	background-color: grey;
+}
+
+.row {
+	display: flex;
+}
+
+.keyboard__row {
+	margin-bottom: 5px;
+}
+
+.key {
+	width: 70px;
+	height: 60px;
+	border: 1px solid #000;
+}
+
+.keyboard__key {
+	margin: 5px;
+}
+
+.keyboard__key span {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
