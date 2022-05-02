@@ -29,7 +29,12 @@
 	border-radius: 5px;
 	background-color: $light-color;
 	background-image: linear-gradient(to bottom, $light-color, $gradient-dark-color);
+	transition: transform 0.2s;
 	cursor: pointer;
+
+	&.active {
+		transform: translateY(4px);
+	}
 
 	span {
 		height: 100%;
@@ -45,8 +50,6 @@
 
 .keyboard__key {
 	margin: $key-margin;
-
-	
 }
 
 .key-left-shift,
