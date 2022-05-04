@@ -52,24 +52,24 @@
 	margin: $key-margin;
 }
 
-.key-left-shift,
-.key-right-shift,
-.key-capslock,
-.key-enter {
+.key-func-left-shift,
+.key-func-right-shift,
+.key-func-capslock,
+.key-func-enter {
 	width: $key-width * 2 + $key-margin * 3;
 }
 
-.key-backspace {
+.key-func-backspace {
 	width: $key-width * 2 + $key-margin * 4;
 }
 
-.key-tab,
-.key-left-ctrl,
-.key-left-alt,
-.key-right-alt {
+.key-func-tab,
+.key-func-left-ctrl,
+.key-func-left-alt,
+.key-func-right-alt {
 	width: $key-width + $key-margin * 2;
 }
 
-.key-space {
+.key-func-space {
 	width: $key-width * 7 + $key-margin * 8 ;
 }

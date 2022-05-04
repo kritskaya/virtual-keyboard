@@ -1,4 +1,4 @@
-const keys = [
+export const keys = [
 	// row 1
 	{
 		name: "key-backquote",
@@ -106,20 +106,20 @@ const keys = [
 	},
 	{
 		name: "key-func-backspace",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Backspace",
+		engshift: "Backspace",
+		rus: "Backspace",
+		russhift: "Backspace",
 		row: 1
 	},
 
 	// row 2
 	{
 		name: "key-func-tab",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Tab",
+		engshift: "Tab",
+		rus: "Tab",
+		russhift: "Tab",
 		row: 2
 	},
 	{
@@ -228,20 +228,20 @@ const keys = [
 	},
 	{
 		name: "key-func-del",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Del",
+		engshift: "Del",
+		rus: "Del",
+		russhift: "Del",
 		row: 2
 	},
 
 	// row 3
 	{
-		name: "key-capslock",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		name: "key-func-capslock",
+		eng: "Caps Lock",
+		engshift: "Caps Lock",
+		rus: "Caps Lock",
+		russhift: "Caps Lock",
 		row: 3
 	},
 	{
@@ -334,20 +334,20 @@ const keys = [
 	},
 	{
 		name: "key-func-enter",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Enter",
+		engshift: "Enter",
+		rus: "Enter",
+		russhift: "Enter",
 		row: 3
 	},
 
 	// row 4
 	{
 		name: "key-func-left-shift",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Shift",
+		engshift: "Shift",
+		rus: "Shift",
+		russhift: "Shift",
 		row: 4
 	},
 	{
@@ -432,92 +432,92 @@ const keys = [
 	},
 	{
 		name: "key-func-up",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "↑",
+		engshift: "↑",
+		rus: "↑",
+		russhift: "↑",
 		row: 4
 	},
 	{
 		name: "key-func-right-shift",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Shift",
+		engshift: "Shift",
+		rus: "Shift",
+		russhift: "Shift",
 		row: 4
 	},
 
 	// row 5
 	{
 		name: "key-func-left-ctrl",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Ctrl",
+		engshift: "Ctrl",
+		rus: "Ctrl",
+		russhift: "Ctrl",
 		row: 5
 	},
 	{
 		name: "key-func-win",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Win",
+		engshift: "Win",
+		rus: "Win",
+		russhift: "Win",
 		row: 5
 	},
 	{
 		name: "key-func-left-alt",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Alt",
+		engshift: "Alt",
+		rus: "Alt",
+		russhift: "Alt",
 		row: 5
 	},
 	{
 		name: "key-func-space",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Space",
+		engshift: "Space",
+		rus: "Space",
+		russhift: "Space",
 		row: 5
 	},
 	{
 		name: "key-func-right-alt",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Alt",
+		engshift: "Alt",
+		rus: "Alt",
+		russhift: "Alt",
 		row: 5
 	},
 	{
 		name: "key-func-left",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "←",
+		engshift: "←",
+		rus: "←",
+		russhift: "←",
 		row: 5
 	},
 	{
 		name: "key-func-down",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "↓",
+		engshift: "↓",
+		rus: "↓",
+		russhift: "↓",
 		row: 5
 	},
 	{
 		name: "key-func-right",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "→",
+		engshift: "→",
+		rus: "→",
+		russhift: "→",
 		row: 5
 	},
 	{
 		name: "key-func-right-ctrl",
-		eng: "",
-		engshift: "",
-		rus: "",
-		russhift: "",
+		eng: "Ctrl",
+		engshift: "Ctrl",
+		rus: "Ctrl",
+		russhift: "Ctrl",
 		row: 5
 	},
 ]
