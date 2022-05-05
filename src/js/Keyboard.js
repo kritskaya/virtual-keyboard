@@ -21,7 +21,6 @@ export class Keyboard {
 	}
 
 	render() {
-		
 		let keyboard = document.createElement('section');
 		keyboard.className = 'keyboard';
 
@@ -51,137 +50,135 @@ export class Keyboard {
 		document.querySelector("main").append(keyboard);
 	}
 
+	keyClickHandler(event, elem) {
+		let value = elem.textContent;
+
+		switch (value) {
+			case 'Tab':
+				this.tabClickHandler();
+				break;
+			case 'Caps Lock':
+				this.capsClickHandler();
+				break;
+			case 'Shift':
+				this.shiftClickHandler();
+				break;
+			case 'Ctrl':
+				this.ctrlClickHandler();
+				break;
+			case 'Win':
+				this.winClickHandler();
+				break;
+			case 'Enter':
+				this.enterClickHandler();
+				break;
+			case 'Backspace':
+				this.backspaceClickHandler();
+				break
+			case 'Del':
+				this.delClickHandler();
+				break;
+
+		}
+		this.keyAction(event, elem);
+		
+	}
+
+	tabClickHandler() {
+		//alert('tab');
+	}
+
+	capsClickHandler() {
+		//alert('tab');
+	}
+
+	shiftClickHandler() {
+		//alert('tab');
+	}
+
+	ctrlClickHandler() {
+		//alert('tab');
+	}
+
+	winClickHandler() {
+		//alert('tab');
+	}
+
+	enterClickHandler() {
+		//alert('tab');
+	}
+
+	backspaceClickHandler() {
+		//alert('tab');
+	}
+
+	delClickHandler() {
+		//alert('tab');
+	}
+
 	changeLanguage() {
 
 	}
 
-	tabKeyHandler(event) {
-		event.preventDefault();
-		let tab = this.keys.flat().find(key => key.name === 'key-func-tab');
-		this.keyAction(event, tab)
-	}
-
-	ctrlKeyHandler(event) {
-		event.preventDefault();
-		
-		let ctrl;
-		if (event.code === 'ControlRight') {
-			ctrl = this.keys.flat().find(key => key.name === 'key-func-right-ctrl');
-		} else {
-			ctrl = this.keys.flat().find(key => key.name === 'key-func-left-ctrl');
-		}
-		
-		this.keyAction(event, ctrl);
-	}
-
-	shiftKeyHandler(event) {
-		event.preventDefault();
-
-		let shift;
-		if (event.code === 'ShiftRight') {
-			shift = this.keys.flat().find(key => key.name === 'key-func-right-shift');
-		} else {
-			shift = this.keys.flat().find(key => key.name === 'key-func-left-shift');
-		}
-
-		this.keyAction(event, shift);
-	}
-
-	altKeyHandler(event) {
-		event.preventDefault();
-
-		let alt;
-		if (event.code === 'AltRight') {
-			alt = this.keys.flat().find(key => key.name === 'key-func-right-alt');
-		} else {
-			alt = this.keys.flat().find(key => key.name === 'key-func-left-alt');
-		}
-
-		this.keyAction(event, alt);
-	}
-
-	capsKeyHandler(event) {
-		event.preventDefault();
-		let caps = this.keys.flat().find(key => key.name === 'key-func-capslock');
-		this.keyAction(event, caps);
-	}
-
-	delKeyHandler(event) {
-		event.preventDefault();
-		let caps = this.keys.flat().find(key => key.name === 'key-func-del');
-		this.keyAction(event, caps);
-	}
-
-	backspaceKeyHandler(event) {
-		event.preventDefault();
-		let backSpace = this.keys.flat().find(key => key.name === 'key-func-backspace');
-		this.keyAction(event, backSpace);
-	}
-
-	winKeyHandler(event) {
-		event.preventDefault();
-		let win = this.keys.flat().find(key => key.name === 'key-func-win');
-		this.keyAction(event, win);
-	}
-
-	arrowKeyHandler(event) {
-		event.preventDefault();
-		let arrow = this.keys.flat().find(key => key.name === 'key-func-'+ event.key.slice(5).toLowerCase());
-		this.keyAction(event, arrow);
-	}
-
-	enterKeyHandler(event) {
-		event.preventDefault();
-		let enter = this.keys.flat().find(key => key.name === 'key-func-enter');
-		this.keyAction(event, enter);
-	}
 
 	keyPressListener(event) {
 		event.preventDefault();
 		let eventKey = event.key;
 
+		let mouseEvent = new MouseEvent('mouse' + event.type.slice(3));
+		let element;
+
 		switch (eventKey) {
 			case 'Tab': 
-				this.tabKeyHandler(event);
+				element = document.querySelector('.key-func-tab');
 				break;
 			case 'Control' :
-				this.ctrlKeyHandler(event);
+				if (event.code === 'ControlRight') {
+					element = document.querySelector('.key-func-right-ctrl');
+				} else {
+					element = document.querySelector('.key-func-left-ctrl');
+				}
 				break;
 			case 'Shift' :
-				this.shiftKeyHandler(event);
+				if (event.code === 'ShiftRight') {
+					element = document.querySelector('.key-func-right-shift');
+				} else {
+					element = document.querySelector('.key-func-left-shift');
+				}
 				break;
 			case 'Alt' :
-				this.altKeyHandler(event);
+				if (event.code === 'AltRight') {
+					element = document.querySelector('.key-func-right-alt');
+				} else {
+					element = document.querySelector('.key-func-left-alt');
+				}
 				break;
 			case 'AltGraph':
-				this.altKeyHandler(event);
+				element = document.querySelector('.key-func-right-alt');
 				break;
 			case 'CapsLock':
-				this.capsKeyHandler(event);
+				element = document.querySelector('.key-func-capslock');
 				break;
 			case 'Delete':
 				this.delKeyHandler(event);
+				element = document.querySelector('.key-func-del');
 				break;
 			case 'Backspace':
 				this.backspaceKeyHandler(event);
+				element = document.querySelector('.key-func-backspace');
 				break;
 			case 'Meta':
 				this.winKeyHandler(event);
+				element = document.querySelector('.key-func-win');
 				break;
 			case 'ArrowLeft':
-				this.arrowKeyHandler(event);
-				break;
 			case 'ArrowRight':
-				this.arrowKeyHandler(event);
-				break;
 			case 'ArrowUp':
-				this.arrowKeyHandler(event);
-				break;
 			case 'ArrowDown':
-				this.arrowKeyHandler(event);
+				element = document.querySelector('.key-func-' + event.key.slice(5).toLowerCase());
 				break;
 			case 'Enter':
-				this.enterKeyHandler(event);
+				element = document.querySelector('.key-func-enter');
 				break;
 			default:
 				for (let i = 0; i < 5; i++) {
@@ -190,18 +187,20 @@ export class Keyboard {
 						key.ru === eventKey ||
 						key.ruShift === eventKey);
 					if (pressed) {
-						this.keyAction(event, pressed);
+						element = document.querySelector('.' + pressed.name);
 						break;
 					}
 				}
 		}
+
+		element && this.keyClickHandler(mouseEvent, element);
 	}
 
 	keyAction(event, key) {
-		if (event.type == 'keydown')
-			key.down();
-		if (event.type == 'keyup')
-			key.up();
+		if (event.type == 'mousedown')
+			key.classList.add('active');
+		if (event.type == 'mouseup')
+			key.classList.remove('active');
 	}
 
 	

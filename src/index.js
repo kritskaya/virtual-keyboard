@@ -15,6 +15,18 @@ window.onload = () => {
 	document.addEventListener('keyup', (event) => {
 		keyboard.keyPressListener(event);
 	});
+
+	document.querySelector('.keyboard').addEventListener('mousedown', (event) => {
+		if (event.target.closest('.key')) {
+			keyboard.keyClickHandler(event, event.target.closest('.key'));
+		}
+	})
+
+	document.querySelector('.keyboard').addEventListener('mouseup', (event) => {
+		if (event.target.closest('.key')) {
+			keyboard.keyClickHandler(event, event.target.closest('.key'));
+		}
+	})
 		
 	
 }
