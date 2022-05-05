@@ -19,10 +19,13 @@ class Input {
   }
 
   type(value) {
+    this.inputDom.setSelectionRange(this.cursorPos, this.cursorPos);
     this.inputDom.focus();
 
     this.inputDom.setRangeText(value, this.cursorPos, this.cursorPos);
     this.cursorPos += 1;
+    this.inputDom.setSelectionRange(this.cursorPos, this.cursorPos);
+    this.inputDom.focus();
   }
 }
 

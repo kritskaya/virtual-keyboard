@@ -12,6 +12,10 @@ window.onload = () => {
   const keyboard = new Keyboard(input);
   keyboard.render();
 
+  document.querySelector('.input').addEventListener('click', (event) => {
+    input.cursorPos = event.target.selectionStart;
+  });
+
   document.addEventListener('keydown', (event) => {
     keyboard.keyPressListener(event);
   });
