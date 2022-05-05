@@ -1,9 +1,13 @@
+import { Input } from './js/Input.js';
 import { Keyboard } from './js/Keyboard.js';
 
 window.onload = () => {
 	let main = document.createElement('main');
 	main.className = 'wrapper';
 	document.body.append(main);
+
+	const input = new Input();
+	input.render();
 
 	const keyboard = new Keyboard();
 	keyboard.render();
