@@ -4,6 +4,7 @@ import Key from './Key.js';
 export default class Keyboard {
   constructor(input) {
     this.keys = [];
+    this.pressedKeys = [];
     this.input = input;
     this.capslock = false;
     this.lang = 'en';
@@ -97,6 +98,7 @@ export default class Keyboard {
           break;
         case 'Ctrl':
           //this.ctrlClickHandler();
+         
           break;
         case 'Alt':
           //this.altClickHandler();
@@ -127,7 +129,6 @@ export default class Keyboard {
   
   capsClickHandler() {
     this.capslock = !this.capslock;
-    console.log(this.capslock + this.lang);
 
     if (this.lang === 'en') {
       if (this.capslock) {
@@ -161,6 +162,12 @@ export default class Keyboard {
     event.preventDefault();
     const eventKey = event.key;
 
+    if (event.type === 'keydown') {
+      this.pressedKeys.push(eventKey);
+    } else {
+      this.pressedKeys = [];
+    }
+
     const mouseEvent = new MouseEvent(`mouse${event.type.slice(3)}`);
     let element;
 
@@ -174,6 +181,11 @@ export default class Keyboard {
         } else {
           element = document.querySelector('.key-func-left-ctrl');
         }
+        
+        if (this.pressedKeys.indexOf('Shift') > -1) {
+          console.log('switch')
+        }
+        
         break;
       case 'Shift':
         if (event.repeat) return;
@@ -182,6 +194,11 @@ export default class Keyboard {
         } else {
           element = document.querySelector('.key-func-left-shift');
         }
+
+        if (this.pressedKeys.indexOf('Control') > -1) {
+          console.log('switch')
+        }
+
         break;
       case 'Alt':
         if (event.code === 'AltRight') {
