@@ -1,6 +1,5 @@
 class Input {
   constructor() {
-    this.text = '';
     this.inputDom = null;
     this.cursorPos = 0;
   }

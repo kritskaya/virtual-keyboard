@@ -42,6 +42,38 @@ export default class Keyboard {
 
     keyboard.append(container);
     document.querySelector('main').append(keyboard);
+
+    // render keyboard indication block
+    const indication = document.createElement('section');
+    indication.className = 'indication';
+
+    const indicationBlock = document.createElement('div');
+    indicationBlock.className = 'indication__items';
+
+    const caps = document.createElement('div');
+    caps.className = 'indication__item caps-indication';
+    const capsName = document.createElement('span');
+    capsName.textContent = 'Caps Lock:';
+    const capsValue = document.createElement('span');
+    capsValue.textContent = 'Off';
+    caps.append(capsName, capsValue);
+
+    const lang = document.createElement('div');
+    lang.className = 'indication__item lang-indication';
+    const langName = document.createElement('span');
+    langName.textContent = 'Language:';
+    const langValue = document.createElement('span');
+    langValue.textContent = 'Eng';
+    lang.append(langName, langValue);
+
+    indicationBlock.append(caps, lang);
+    
+    const description = document.createElement('p');
+    description.textContent = 'Клавиатура создана в операционной системе Windows';
+    
+    indication.append(indicationBlock, description);
+
+    document.querySelector('main').append(indication);
   }
 
   keyClickHandler(event, elem) {
@@ -53,19 +85,24 @@ export default class Keyboard {
           this.input.type('\t');
           break;
         case 'Caps Lock':
+          if (this.capslock) {
+            document.querySelector('.caps-indication span:last-child').textContent = 'Off';
+          } else {
+            document.querySelector('.caps-indication span:last-child').textContent = 'On';
+          }
           this.capsClickHandler();
           break;
         case 'Shift':
           this.capsClickHandler();
           break;
         case 'Ctrl':
-          this.ctrlClickHandler();
+          //this.ctrlClickHandler();
           break;
         case 'Alt':
-          this.altClickHandler();
+          //this.altClickHandler();
           break;
         case 'Win':
-          this.winClickHandler();
+          //this.winClickHandler();
           break;
         case 'Enter':
           this.input.type('\n');
@@ -110,26 +147,6 @@ export default class Keyboard {
     keysDom.forEach((keyDom) => {
       keyDom.textContent = this.keys.flat().find((key) => keyDom.closest(`.${key.name}`)).value;
     })
-  }
-
-  shiftClickHandler() {
-    // alert('tab');
-  }
-
-  ctrlClickHandler() {
-    // alert('tab');
-  }
-
-  altClickHandler() {
-    // alert('tab');
-  }
-  
-  winClickHandler() {
-    // alert('tab');
-  }
-
-  enterClickHandler() {
-    // alert('tab');
   }
 
   symbolClickHandler(value) {
