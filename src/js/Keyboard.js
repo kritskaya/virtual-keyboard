@@ -68,14 +68,12 @@ export default class Keyboard {
           this.winClickHandler();
           break;
         case 'Enter':
-          this.enterClickHandler();
+          this.input.type('\n');
           break;
         case 'Backspace':
-          //this.backspaceClickHandler();
           this.input.clear('left');
           break;
         case 'Del':
-          //this.delClickHandler();
           this.input.clear('right');
           break;
         default:
@@ -108,11 +106,8 @@ export default class Keyboard {
       }
     }
 
-    //console.log(this.keys);
-
     const keysDom = document.querySelectorAll('.key span');
     keysDom.forEach((keyDom) => {
-      //this.keys.flat().find((key) => keyDom.closest(key.name));
       keyDom.textContent = this.keys.flat().find((key) => keyDom.closest(`.${key.name}`)).value;
     })
   }
