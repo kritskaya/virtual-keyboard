@@ -5,7 +5,8 @@ export default class Keyboard {
   constructor(input) {
     this.keys = [];
     this.input = input;
-    this.currentLang = 'en';
+    this.capslock = false;
+    this.lang = 'en';
     this.generateKeys();
   }
 
@@ -33,15 +34,7 @@ export default class Keyboard {
       row.className = 'keyboard__row row';
 
       this.keys[i].forEach((key) => {
-        const keyElem = document.createElement('div');
-        keyElem.className = 'keyboard__key key';
-        keyElem.classList.add(key.name);
-
-        const value = document.createElement('span');
-        value.textContent = key.value;
-
-        keyElem.append(value);
-        row.append(keyElem);
+        row.append(key.render());
       });
 
       container.append(row);
@@ -57,16 +50,19 @@ export default class Keyboard {
     if (event.type === 'mousedown') {
       switch (value) {
         case 'Tab':
-          this.tabClickHandler();
+          this.input.type('\t');
           break;
         case 'Caps Lock':
           this.capsClickHandler();
           break;
         case 'Shift':
-          this.shiftClickHandler();
+          this.capsClickHandler();
           break;
         case 'Ctrl':
           this.ctrlClickHandler();
+          break;
+        case 'Alt':
+          this.altClickHandler();
           break;
         case 'Win':
           this.winClickHandler();
@@ -75,25 +71,50 @@ export default class Keyboard {
           this.enterClickHandler();
           break;
         case 'Backspace':
-          this.backspaceClickHandler();
+          //this.backspaceClickHandler();
+          this.input.clear('left');
           break;
         case 'Del':
-          this.delClickHandler();
+          //this.delClickHandler();
+          this.input.clear('right');
           break;
         default:
           this.symbolClickHandler(value);
+      }
+    } else if (event.type === 'mouseup') {
+      if (value === 'Shift') {
+        this.capsClickHandler();
       }
     }
 
     Keyboard.keyAction(event, elem);
   }
-
-  tabClickHandler() {
-    this.input.type('tab');
-  }
-
+  
   capsClickHandler() {
-    // alert('tab');
+    this.capslock = !this.capslock;
+    console.log(this.capslock + this.lang);
+
+    if (this.lang === 'en') {
+      if (this.capslock) {
+        this.keys.forEach((row) => row.map((key) => key.value = key.enShift));
+      } else {
+        this.keys.map((row) => row.map((key) => key.value = key.en));
+      }
+    } else {
+      if (this.capslock) {
+        this.keys.map((key) => key.value = key.ruShift);
+      } else {
+        this.keys.map((key) => key.value = key.ru);
+      }
+    }
+
+    //console.log(this.keys);
+
+    const keysDom = document.querySelectorAll('.key span');
+    keysDom.forEach((keyDom) => {
+      //this.keys.flat().find((key) => keyDom.closest(key.name));
+      keyDom.textContent = this.keys.flat().find((key) => keyDom.closest(`.${key.name}`)).value;
+    })
   }
 
   shiftClickHandler() {
@@ -104,19 +125,15 @@ export default class Keyboard {
     // alert('tab');
   }
 
+  altClickHandler() {
+    // alert('tab');
+  }
+  
   winClickHandler() {
     // alert('tab');
   }
 
   enterClickHandler() {
-    // alert('tab');
-  }
-
-  backspaceClickHandler() {
-    // alert('tab');
-  }
-
-  delClickHandler() {
     // alert('tab');
   }
 
@@ -147,6 +164,7 @@ export default class Keyboard {
         }
         break;
       case 'Shift':
+        if (event.repeat) return;
         if (event.code === 'ShiftRight') {
           element = document.querySelector('.key-func-right-shift');
         } else {
@@ -164,18 +182,16 @@ export default class Keyboard {
         element = document.querySelector('.key-func-right-alt');
         break;
       case 'CapsLock':
+        if (event.repeat) return;
         element = document.querySelector('.key-func-capslock');
         break;
       case 'Delete':
-        this.delKeyHandler(event);
         element = document.querySelector('.key-func-del');
         break;
       case 'Backspace':
-        this.backspaceKeyHandler(event);
         element = document.querySelector('.key-func-backspace');
         break;
       case 'Meta':
-        this.winKeyHandler(event);
         element = document.querySelector('.key-func-win');
         break;
       case 'ArrowLeft':

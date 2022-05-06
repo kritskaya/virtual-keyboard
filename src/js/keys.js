@@ -409,7 +409,7 @@ const keys = [
   {
     name: 'key-comma',
     eng: ',',
-    engshift: '&lt;',
+    engshift: '<',
     rus: 'б',
     russhift: 'Б',
     row: 4,
@@ -417,7 +417,7 @@ const keys = [
   {
     name: 'key-dot',
     eng: '.',
-    engshift: '&gt;',
+    engshift: '>',
     rus: 'ю',
     russhift: 'Ю',
     row: 4,

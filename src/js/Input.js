@@ -23,10 +23,31 @@ class Input {
     this.inputDom.focus();
 
     this.inputDom.setRangeText(value, this.cursorPos, this.cursorPos);
-    this.cursorPos += 1;
+    this.cursorPos += value.length;
+
     this.inputDom.setSelectionRange(this.cursorPos, this.cursorPos);
     this.inputDom.focus();
   }
+
+  clear(direction) {
+    this.inputDom.setSelectionRange(this.cursorPos, this.cursorPos);
+    this.inputDom.focus();
+
+    if (direction === 'left' && this.cursorPos !== 0) {
+      this.inputDom.setRangeText('', this.cursorPos - 1, this.cursorPos);
+      this.cursorPos -= 1;
+    }
+
+    if (direction === 'right' && this.cursorPos !== this.inputDom.length - 1) {
+      this.inputDom.setRangeText('', this.cursorPos, this.cursorPos + 1);
+      //this.cursorPos -= 1;
+    }
+
+    this.inputDom.setSelectionRange(this.cursorPos, this.cursorPos);
+    this.inputDom.focus();
+  }
+
+  //moveCursor() 
 }
 
 export default Input;
