@@ -7,7 +7,13 @@ export default class Keyboard {
     this.pressedKeys = [];
     this.input = input;
     this.capslock = false;
-    this.lang = 'en';
+   
+    if (localStorage.getItem('lang')) {
+      this.lang = localStorage.getItem('lang');
+    } else {
+      this.lang = 'en';
+    }
+    
     this.generateKeys();
   }
 
@@ -131,6 +137,8 @@ export default class Keyboard {
       this.lang = 'en';
       indicator.textContent = 'Eng';
     }
+
+    localStorage.setItem('lang', this.lang);
   }
 
   keyPressListener(event) {
