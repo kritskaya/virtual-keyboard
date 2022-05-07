@@ -66,7 +66,6 @@ export default class Keyboard {
           break;
         case 'Ctrl':
           //this.ctrlClickHandler();
-         
           break;
         case 'Alt':
           //this.altClickHandler();
@@ -132,7 +131,6 @@ export default class Keyboard {
       this.lang = 'en';
       indicator.textContent = 'Eng';
     }
-
   }
 
   keyPressListener(event) {

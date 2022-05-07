@@ -474,10 +474,10 @@ const keys = [
   },
   {
     name: 'key-space',
-    eng: 'Space',
-    engshift: 'Space',
-    rus: 'Space',
-    russhift: 'Space',
+    eng: ' ',
+    engshift: ' ',
+    rus: ' ',
+    russhift: ' ',
     row: 5,
   },
   {
