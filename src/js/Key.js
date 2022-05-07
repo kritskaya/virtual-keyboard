@@ -2,7 +2,7 @@ export default class Key {
   constructor(data) {
     this.name = data.name;
 
-    if (data.name === 'key-func-space') {
+    if (data.name === 'key-space') {
       this.value = ' ';
     } else {
       this.value = data.eng;
@@ -11,7 +11,7 @@ export default class Key {
     this.en = data.eng;
     this.enShift = data.engshift;
     this.ru = data.rus;
-    this.ruShift = data.rusValue;
+    this.ruShift = data.russhift;
   }
 
   render() {

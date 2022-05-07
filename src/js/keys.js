@@ -105,7 +105,7 @@ const keys = [
     row: 1,
   },
   {
-    name: 'key-func-backspace',
+    name: 'key-backspace',
     eng: 'Backspace',
     engshift: 'Backspace',
     rus: 'Backspace',
@@ -115,7 +115,7 @@ const keys = [
 
   // row 2
   {
-    name: 'key-func-tab',
+    name: 'key-tab',
     eng: 'Tab',
     engshift: 'Tab',
     rus: 'Tab',
@@ -227,7 +227,7 @@ const keys = [
     row: 2,
   },
   {
-    name: 'key-func-del',
+    name: 'key-del',
     eng: 'Del',
     engshift: 'Del',
     rus: 'Del',
@@ -237,7 +237,7 @@ const keys = [
 
   // row 3
   {
-    name: 'key-func-capslock',
+    name: 'key-capslock',
     eng: 'Caps Lock',
     engshift: 'Caps Lock',
     rus: 'Caps Lock',
@@ -333,7 +333,7 @@ const keys = [
     row: 3,
   },
   {
-    name: 'key-func-enter',
+    name: 'key-enter',
     eng: 'Enter',
     engshift: 'Enter',
     rus: 'Enter',
@@ -343,7 +343,7 @@ const keys = [
 
   // row 4
   {
-    name: 'key-func-left-shift',
+    name: 'key-left-shift',
     eng: 'Shift',
     engshift: 'Shift',
     rus: 'Shift',
@@ -431,7 +431,7 @@ const keys = [
     row: 4,
   },
   {
-    name: 'key-func-up',
+    name: 'key-up',
     eng: '↑',
     engshift: '↑',
     rus: '↑',
@@ -439,7 +439,7 @@ const keys = [
     row: 4,
   },
   {
-    name: 'key-func-right-shift',
+    name: 'key-right-shift',
     eng: 'Shift',
     engshift: 'Shift',
     rus: 'Shift',
@@ -449,7 +449,7 @@ const keys = [
 
   // row 5
   {
-    name: 'key-func-left-ctrl',
+    name: 'key-left-ctrl',
     eng: 'Ctrl',
     engshift: 'Ctrl',
     rus: 'Ctrl',
@@ -457,7 +457,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-win',
+    name: 'key-win',
     eng: 'Win',
     engshift: 'Win',
     rus: 'Win',
@@ -465,7 +465,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-left-alt',
+    name: 'key-left-alt',
     eng: 'Alt',
     engshift: 'Alt',
     rus: 'Alt',
@@ -473,7 +473,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-space',
+    name: 'key-space',
     eng: 'Space',
     engshift: 'Space',
     rus: 'Space',
@@ -481,7 +481,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-right-alt',
+    name: 'key-right-alt',
     eng: 'Alt',
     engshift: 'Alt',
     rus: 'Alt',
@@ -489,7 +489,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-left',
+    name: 'key-left',
     eng: '←',
     engshift: '←',
     rus: '←',
@@ -497,7 +497,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-down',
+    name: 'key-down',
     eng: '↓',
     engshift: '↓',
     rus: '↓',
@@ -505,7 +505,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-right',
+    name: 'key-right',
     eng: '→',
     engshift: '→',
     rus: '→',
@@ -513,7 +513,7 @@ const keys = [
     row: 5,
   },
   {
-    name: 'key-func-right-ctrl',
+    name: 'key-right-ctrl',
     eng: 'Ctrl',
     engshift: 'Ctrl',
     rus: 'Ctrl',

@@ -138,9 +138,9 @@ export default class Keyboard {
       }
     } else {
       if (this.capslock) {
-        this.keys.map((key) => key.value = key.ruShift);
+        this.keys.forEach((row) => row.map((key) => key.value = key.ruShift));
       } else {
-        this.keys.map((key) => key.value = key.ru);
+        this.keys.map((row) => row.map((key) => key.value = key.ru));
       }
     }
 
@@ -155,7 +155,18 @@ export default class Keyboard {
   }
 
   changeLanguage() {
-    // alert('tab');
+    const indicator = document.querySelector('.lang-indication span:last-child');
+
+    if (this.lang === 'en') {
+      this.lang = 'ru';
+      indicator.textContent = 'Rus';
+    } else {
+      this.lang = 'en';
+      indicator.textContent = 'Eng';
+    }
+
+    // this.keys.forEach((row) => row.map((key) => key.value = key[`${this.lang}Shift`]));
+
   }
 
   keyPressListener(event) {
@@ -173,64 +184,64 @@ export default class Keyboard {
 
     switch (eventKey) {
       case 'Tab':
-        element = document.querySelector('.key-func-tab');
+        element = document.querySelector('.key-tab');
         break;
       case 'Control':
         if (event.code === 'ControlRight') {
-          element = document.querySelector('.key-func-right-ctrl');
+          element = document.querySelector('.key-right-ctrl');
         } else {
-          element = document.querySelector('.key-func-left-ctrl');
+          element = document.querySelector('.key-left-ctrl');
         }
         
         if (this.pressedKeys.indexOf('Shift') > -1) {
-          console.log('switch')
+          this.changeLanguage();
         }
         
         break;
       case 'Shift':
         if (event.repeat) return;
         if (event.code === 'ShiftRight') {
-          element = document.querySelector('.key-func-right-shift');
+          element = document.querySelector('.key-right-shift');
         } else {
-          element = document.querySelector('.key-func-left-shift');
+          element = document.querySelector('.key-left-shift');
         }
 
         if (this.pressedKeys.indexOf('Control') > -1) {
-          console.log('switch')
+          this.changeLanguage();
         }
 
         break;
       case 'Alt':
         if (event.code === 'AltRight') {
-          element = document.querySelector('.key-func-right-alt');
+          element = document.querySelector('.key-right-alt');
         } else {
-          element = document.querySelector('.key-func-left-alt');
+          element = document.querySelector('.key-left-alt');
         }
         break;
       case 'AltGraph':
-        element = document.querySelector('.key-func-right-alt');
+        element = document.querySelector('.key-right-alt');
         break;
       case 'CapsLock':
         if (event.repeat) return;
-        element = document.querySelector('.key-func-capslock');
+        element = document.querySelector('.key-capslock');
         break;
       case 'Delete':
-        element = document.querySelector('.key-func-del');
+        element = document.querySelector('.key-del');
         break;
       case 'Backspace':
-        element = document.querySelector('.key-func-backspace');
+        element = document.querySelector('.key-backspace');
         break;
       case 'Meta':
-        element = document.querySelector('.key-func-win');
+        element = document.querySelector('.key-win');
         break;
       case 'ArrowLeft':
       case 'ArrowRight':
       case 'ArrowUp':
       case 'ArrowDown':
-        element = document.querySelector(`.key-func-${event.key.slice(5).toLowerCase()}`);
+        element = document.querySelector(`.key-${event.key.slice(5).toLowerCase()}`);
         break;
       case 'Enter':
-        element = document.querySelector('.key-func-enter');
+        element = document.querySelector('.key-enter');
         break;
       default:
         for (let i = 0; i < 5; i += 1) {
