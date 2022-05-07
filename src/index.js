@@ -1,3 +1,4 @@
+import Indication from './js/Indication.js';
 import Input from './js/Input.js';
 import Keyboard from './js/Keyboard.js';
 
@@ -11,6 +12,9 @@ window.onload = () => {
 
   const keyboard = new Keyboard(input);
   keyboard.render();
+
+  const indication = new Indication();
+  indication.render();
 
   document.querySelector('.input').addEventListener('click', (event) => {
     input.cursorPos = event.target.selectionStart;
