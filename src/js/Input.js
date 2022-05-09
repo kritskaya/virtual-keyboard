@@ -39,14 +39,11 @@ class Input {
 
     if (direction === 'right' && this.cursorPos !== this.inputDom.length - 1) {
       this.inputDom.setRangeText('', this.cursorPos, this.cursorPos + 1);
-      //this.cursorPos -= 1;
     }
 
     this.inputDom.setSelectionRange(this.cursorPos, this.cursorPos);
     this.inputDom.focus();
   }
-
-  //moveCursor() 
 }
 
 export default Input;

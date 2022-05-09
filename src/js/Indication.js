@@ -1,5 +1,4 @@
 export default class Indication {
-
   render() {
     const indication = document.createElement('section');
     indication.className = 'indication';
@@ -14,6 +13,7 @@ export default class Indication {
     const capsValue = document.createElement('span');
     capsValue.textContent = 'Off';
     caps.append(capsName, capsValue);
+    this.caps = false;
 
     const lang = document.createElement('div');
     lang.className = 'indication__item lang-indication';
@@ -22,13 +22,14 @@ export default class Indication {
     const langValue = document.createElement('span');
     langValue.textContent = 'Eng';
     lang.append(langName, langValue);
+    this.lang = 'en';
 
     indicationBlock.append(caps, lang);
-    
+
     const description = document.createElement('p');
     description.innerHTML = `Комбинация клавиш для смены языка Ctrl + Shift или клик на индикаторе<br>
     Клавиатура создана в операционной системе Windows`;
-    
+
     indication.append(indicationBlock, description);
 
     document.querySelector('main').append(indication);

@@ -1,5 +1,5 @@
-import keysData from './keys.js';
-import Key from './Key.js';
+import keysData from './keys';
+import Key from './Key';
 
 export default class Keyboard {
   constructor(input) {
@@ -7,13 +7,13 @@ export default class Keyboard {
     this.pressedKeys = [];
     this.input = input;
     this.capslock = false;
-   
+
     if (localStorage.getItem('lang')) {
       this.lang = localStorage.getItem('lang');
     } else {
       this.lang = 'en';
     }
-    
+
     this.generateKeys();
   }
 
@@ -70,6 +70,10 @@ export default class Keyboard {
         case 'Shift':
           this.capsClickHandler();
           break;
+        case 'Alt':
+        case 'Win':
+        case 'Ctrl':
+          break;
         case 'Enter':
           this.input.type('\n');
           break;
@@ -90,28 +94,44 @@ export default class Keyboard {
 
     Keyboard.keyAction(event, elem);
   }
-  
+
   capsClickHandler() {
     this.capslock = !this.capslock;
 
     if (this.lang === 'en') {
       if (this.capslock) {
-        this.keys.forEach((row) => row.map((key) => key.value = key.enShift));
+        this.keys.forEach((row) => row.map((key) => {
+          const temp = key;
+          temp.value = key.enShift;
+          return temp;
+        }));
       } else {
-        this.keys.map((row) => row.map((key) => key.value = key.en));
+        this.keys.map((row) => row.map((key) => {
+          const temp = key;
+          temp.value = key.en;
+          return temp;
+        }));
       }
+    } else if (this.capslock) {
+      this.keys.forEach((row) => row.map((key) => {
+        const temp = key;
+        temp.value = key.ruShift;
+        return temp;
+      }));
     } else {
-      if (this.capslock) {
-        this.keys.forEach((row) => row.map((key) => key.value = key.ruShift));
-      } else {
-        this.keys.map((row) => row.map((key) => key.value = key.ru));
-      }
+      this.keys.map((row) => row.map((key) => {
+        const temp = key;
+        temp.value = key.ru;
+        return temp;
+      }));
     }
 
     const keysDom = document.querySelectorAll('.key span');
     keysDom.forEach((keyDom) => {
-      keyDom.textContent = this.keys.flat().find((key) => keyDom.closest(`.${key.name}`)).value;
-    })
+      const temp = keyDom;
+      temp.textContent = this.keys.flat().find((key) => keyDom.closest(`.${key.name}`)).value;
+      return temp;
+    });
   }
 
   symbolClickHandler(value) {
@@ -155,11 +175,11 @@ export default class Keyboard {
         } else {
           element = document.querySelector('.key-left-ctrl');
         }
-        
+
         if (this.pressedKeys.indexOf('Shift') > -1) {
           this.changeLanguage();
         }
-        
+
         break;
       case 'Shift':
         if (event.repeat) return;

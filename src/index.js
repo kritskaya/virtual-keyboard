@@ -1,11 +1,11 @@
-import Indication from './js/Indication.js';
-import Input from './js/Input.js';
-import Keyboard from './js/Keyboard.js';
+import Indication from './js/Indication';
+import Input from './js/Input';
+import Keyboard from './js/Keyboard';
 
 window.onload = () => {
   const main = document.createElement('main');
   main.className = 'wrapper';
-  document.body.append(main);
+  document.body.prepend(main);
 
   const input = new Input();
   input.render();
