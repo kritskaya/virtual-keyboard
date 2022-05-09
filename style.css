@@ -1,0 +1,171 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+}
+
+.wrapper {
+  padding: 20px;
+}
+.wrapper section {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 1100px;
+  height: 200px;
+  padding: 15px;
+  border: 7px solid #000099;
+  border-radius: 10px;
+  font-size: inherit;
+  resize: none;
+}
+
+.keyboard {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #3b3bbd;
+  border-bottom: 5px solid #000099;
+  border-left: 5px solid #2a2a9e;
+  border-right: 5px solid #0000b3;
+  border-top: 5px solid #6161d8;
+}
+
+.keyboard-container {
+  padding: 5px;
+  border-radius: 7px;
+  background-color: #000099;
+}
+
+.row {
+  display: flex;
+}
+
+.key {
+  width: 65px;
+  height: 65px;
+  padding: 4px 8px 16px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, #ffffff, #8080ff);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.key.active {
+  transform: translateY(4px);
+}
+.key span {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  background-color: #ffffff;
+  background-image: linear-gradient(to top, #ffffff, #ccccff);
+}
+
+.keyboard__key {
+  margin: 2px;
+}
+
+.key-left-shift,
+.key-right-shift,
+.key-capslock,
+.key-enter {
+  width: 136px;
+}
+
+.key-backspace {
+  width: 138px;
+}
+
+.key-tab,
+.key-left-ctrl,
+.key-left-alt,
+.key-right-alt {
+  width: 69px;
+}
+
+.key-space {
+  width: 471px;
+}
+
+.indication p {
+  text-align: center;
+}
+
+.indication__items {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+}
+
+.indication__item {
+  width: 250px;
+  padding: 10px;
+  border: 3px solid #000099;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.indication__item > span:first-child {
+  margin-right: 10px;
+}
+.indication__item > span:last-child {
+  color: red;
+}
+
+.lang-indication {
+  background-color: #3b3bbd;
+}
+.lang-indication span:last-child {
+  cursor: pointer;
+}
+
+.caps-indication {
+  background-color: #3b3bbd;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
