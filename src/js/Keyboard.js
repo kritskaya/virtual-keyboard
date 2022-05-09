@@ -70,15 +70,6 @@ export default class Keyboard {
         case 'Shift':
           this.capsClickHandler();
           break;
-        case 'Ctrl':
-          //this.ctrlClickHandler();
-          break;
-        case 'Alt':
-          //this.altClickHandler();
-          break;
-        case 'Win':
-          //this.winClickHandler();
-          break;
         case 'Enter':
           this.input.type('\n');
           break;

@@ -40,4 +40,10 @@ window.onload = () => {
       document.querySelector('.input').focus();
     }
   });
+
+  document.querySelector('.lang-indication span:last-child').addEventListener('click', () => {
+    keyboard.changeLanguage();
+    keyboard.capsClickHandler();
+    keyboard.capsClickHandler();
+  });
 };

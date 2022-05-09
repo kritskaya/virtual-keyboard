@@ -26,7 +26,8 @@ export default class Indication {
     indicationBlock.append(caps, lang);
     
     const description = document.createElement('p');
-    description.textContent = 'Клавиатура создана в операционной системе Windows';
+    description.innerHTML = `Комбинация клавиш для смены языка Ctrl + Shift или клик на индикаторе<br>
+    Клавиатура создана в операционной системе Windows`;
     
     indication.append(indicationBlock, description);
 
