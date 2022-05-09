@@ -223,7 +223,7 @@ const keys = [
     en: '\\',
     enshift: '|',
     ru: '\\',
-    rushift: '/',
+    rushift: '|',
     row: 2,
   },
   {

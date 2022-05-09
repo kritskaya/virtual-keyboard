@@ -231,13 +231,21 @@ export default class Keyboard {
           const pressed = this.keys[i].find((key) => key.en === eventKey
             || key.enShift === eventKey
             || key.ru === eventKey
-            || key.ruShift === eventKey);
+            || key.ruShift === eventKey);       
+
           if (pressed) {
+            // if (event.keyCode === 191) pressed.name = 'key-slash';
+            if (event.keyCode === 59) pressed.name = 'key-semicolon';
+            if (event.keyCode === 186) pressed.name = 'key-semicolon';
+            if (event.keyCode === 222) pressed.name = 'key-quote';
+            if (event.code === 'ShiftRight') pressed.name = 'key-right-shift';
             element = document.querySelector(`.${pressed.name}`);
             break;
           }
         }
+        break;
     }
+    console.log(event.code);
 
     if (element) {
       this.keyClickHandler(mouseEvent, element);
