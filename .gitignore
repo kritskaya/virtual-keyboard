@@ -1,4 +1,5 @@
 node_modules
 dist
-style.css
-style.css.map
+src/style.css
+src/style.css.map
+package-loxk.json
