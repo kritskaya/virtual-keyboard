@@ -1,0 +1,42 @@
+.indication {
+	p {
+		text-align: center;
+	}
+}
+
+.indication__items {
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 15px;
+}
+
+.indication__item {
+	width: 250px;
+	padding: 10px;
+	border: 3px solid $btn-container-color;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+
+	& > span:first-child {
+		margin-right: 10px;
+	}
+
+	& > span:last-child {
+		color: red;
+	}
+}
+
+.lang-indication {
+	background-color: $keyboard-color;	
+
+	span:last-child {
+		cursor: pointer;
+	}
+}
+
+.caps-indication {
+	background-color: $keyboard-color;
+}
