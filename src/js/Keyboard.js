@@ -231,7 +231,7 @@ export default class Keyboard {
           const pressed = this.keys[i].find((key) => key.en === eventKey
             || key.enShift === eventKey
             || key.ru === eventKey
-            || key.ruShift === eventKey);       
+            || key.ruShift === eventKey);
 
           if (pressed) {
             // if (event.keyCode === 191) pressed.name = 'key-slash';
@@ -245,7 +245,6 @@ export default class Keyboard {
         }
         break;
     }
-    console.log(event.code);
 
     if (element) {
       this.keyClickHandler(mouseEvent, element);
